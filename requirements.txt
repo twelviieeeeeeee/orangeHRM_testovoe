@@ -1,0 +1,4 @@
+faker
+selenium
+pytest
+pytest-html
