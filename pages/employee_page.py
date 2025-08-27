@@ -268,7 +268,6 @@ class EmployeePage:
             )
         )
         username_input.click()
-        username_input.click()
         username_input.send_keys(new_username)
 
         save_button = WebDriverWait(self.driver, 10).until(
