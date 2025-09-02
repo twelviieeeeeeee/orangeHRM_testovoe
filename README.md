@@ -1,15 +1,15 @@
 # OrangeHRM UI Test Automation
 
-Набор UI-автотестов для демо-стенда [OrangeHRM](https://opensource-demo.orangehrmlive.com), реализованный на **Selenium + PyTest**.
+A set of UI automation tests for the [OrangeHRM](https://opensource-demo.orangehrmlive.com), demo site, implemented with Selenium + PyTest.
 
-## 📦 Стек
+## 📦 Stack
 - Selenium
 - PyTest
-- Faker (генерация тестовых данных)
-- Pytest-html (репорты)
+- Faker (test data generation)
+- Pytest-html (reports)
 
-## 🖥️ Окружение
-Тесты разрабатывались и запускались в следующем окружении:
+## 🖥️ Environment
+Tests were developed and executed in the following environment:
 ```
 - Windows 10 / Python 3.13.3
 
@@ -23,21 +23,21 @@
 
 - pytest-metadata 3.1.1
 ```
-## 📂 Структура проекта
+## 📂Project Structure
 ```
 .
 ├── config/
 
-│ └── settings.py # Конфигурация: baseUrl, креды, браузер
+│ └── settings.py # Configuration: baseUrl, credentials, browser
 
-├── pages/ # Page Object классы (LoginPage, PIMPage, EmployeePage и др.)
+├── pages/ # Page Object classes (LoginPage, PIMPage, EmployeePage and etc.)
 
-├── tests/ # Тесты
+├── tests/ # Tests
 
-│ ├── conftest.py # фикстуры, хуки, скриншоты при падении
-│ └── ... # e2e и негативные тесты
+│ ├── conftest.py # fixtures, hooks, screenshots on failure
+│ └── ... # e2e and negative tests
 
-├── utils/ # вспомогательные функции (генерация данных и др.)
+├── utils/ # helper functions (data generation, etc.)
 
 ├── requirements.txt
 
@@ -45,8 +45,8 @@
 ```
 
 
-## ⚙️ Конфигурация
-Все настройки хранятся в `config/settings.py`:
+## ⚙️ Configuration
+All settings are stored in `config/settings.py`:
 ```python
 BASE_URL = "https://opensource-demo.orangehrmlive.com/"
 
@@ -58,62 +58,61 @@ BROWSER = "chrome"
 
 HEADLESS = False
 ```
-Установка и запуск:
+Installation and execution:
 
 ```
-Клонирование и запуск:
+Clone and navigate:
 
 git clone https://github.com/twelviieeeeeeee/orangeHRM_testovoe.git
 cd orangeHRM_testovoe
 ```
 ```
-Установить зависимости:
+Install dependencies:
 
 pip install -r requirements.txt
 ```
 ```
-Запустить все тесты с HTML-отчетом:
+Run all tests with HTML report:
 
 pytest --html=report.html --self-contained-html
 ```
-Скриншоты падений сохраняются в tests/screenshots/ автоматически.
+Screenshots on failures are saved automatically in tests/screenshots/ автоматически.
 
-Покрытие тестов
+Test Coverage
 
-Реализовано 11 тестов:
+11 tests implemented:
 ```
-Позитивные:
+Positive:
 
-Авторизация валидными данными
+Valid login
 
-Переход в PIM и создание сотрудника
+Navigate to PIM and create employee
 
-Поиск сотрудника по имени
+Search employee by name
 
-Редактирование профиля сотрудника
+Edit employee profile
 
-Проверка сообщений об успехе, масок и обязательных полей
+Check success messages, masks, and required fields
 
-Логаут
+Logout
 ```
 ```
-Негативные:
+Negative:
 
-Неверный логин 
+Invalid login
 
-Создание сотрудника без обязательных полей 
+Create employee without required fields
 
-Поиск несуществующего сотрудника
+Search for a non-existent employee
 
-Проверка сохранения/отмены изменений 
+Check save/cancel changes
 ```
-Так же несколько тестов на логин по тз
+Also, several login tests according to the requirements.
 ```
-Артефакты
+Artifacts
 
-HTML-репорт (report.html)
+HTML-reports (report.html)
 
-Скриншоты при падении: tests/screenshots/
+Screenshots on failure: tests/screenshots/
 ```
-Автор: Диана Мухортова
-
+Author: Diana Muhortova
